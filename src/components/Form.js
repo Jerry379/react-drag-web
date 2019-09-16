@@ -1,7 +1,5 @@
 import React,{useEffect} from 'react';
 import '../../node_modules/layui-src/dist/css/layui.css'
-import '../../node_modules/layui-src/dist/layui'
-// import layui from 'layui-src'
 
 function Form(){
   useEffect(()=>{
