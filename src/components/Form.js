@@ -13,13 +13,13 @@ function Form(){
   })
   return (
     <form className="layui-form" action="">
-      <div className="layui-form-item">
+      <div className="layui-form-item dragitem">
           <label className="layui-form-label">输入框</label>
           <div className="layui-input-block">
           <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autoComplete="off" className="layui-input"/>
           </div>
       </div>
-      <div className="layui-form-item">
+      <div className="layui-form-item dragitem">
           <label className="layui-form-label">密码框</label>
           <div className="layui-input-block">
             <div className="layui-input-inline">
@@ -28,7 +28,7 @@ function Form(){
             <div className="layui-form-mid layui-word-aux">辅助文字</div>
           </div>
       </div>
-      <div className="layui-form-item">
+      <div className="layui-form-item dragitem">
           <label className="layui-form-label">选择框</label>
           <div className="layui-input-block">
             <select name="city" lay-verify="required">
@@ -41,7 +41,7 @@ function Form(){
             </select>
           </div>
       </div>
-      <div className="layui-form-item">
+      <div className="layui-form-item dragitem">
           <label className="layui-form-label">复选框</label>
           <div className="layui-input-block">
           <input type="checkbox" name="like[write]" title="写作"/>
@@ -49,20 +49,20 @@ function Form(){
           <input type="checkbox" name="like[dai]" title="发呆"/>
           </div>
       </div>
-      <div className="layui-form-item">
+      <div className="layui-form-item dragitem">
           <label className="layui-form-label">开关</label>
           <div className="layui-input-block">
           <input type="checkbox" name="switch" lay-skin="switch"/>
           </div>
       </div>
-      <div className="layui-form-item">
+      <div className="layui-form-item dragitem">
           <label className="layui-form-label">单选框</label>
           <div className="layui-input-block">
           <input type="radio" name="sex" value="男" title="男"/>
           <input type="radio" name="sex" value="女" title="女"/>
           </div>
       </div>
-      <div className="layui-form-item">
+      <div className="layui-form-item dragitem">
           <label className="layui-form-label">多选框</label>
           <div className="layui-input-block">
             <input type="checkbox" name="" title="写作" lay-skin="primary"/>
@@ -70,13 +70,13 @@ function Form(){
             <input type="checkbox" name="" title="禁用" lay-skin="primary"/> 
           </div>
       </div>
-      <div className="layui-form-item layui-form-text">
+      <div className="layui-form-item layui-form-text dragitem">
           <label className="layui-form-label">文本域</label>
           <div className="layui-input-block">
           <textarea name="desc" placeholder="请输入内容" className="layui-textarea"></textarea>
           </div>
       </div>
-      <div className="layui-form-item layui-form-text">
+      <div className="layui-form-item layui-form-text dragitem">
           <label className="layui-form-label">下拉选择框</label>
           <div className="layui-input-block">
           <select name="city" lay-verify="">
@@ -102,7 +102,7 @@ function Form(){
           </select>
           </div>
       </div>
-      <div className="layui-form-item">
+      <div className="layui-form-item dragitem">
           <div className="layui-input-block">
           <button className="layui-btn" lay-submit={true.toString()} lay-filter="formDemo">立即提交</button>
           <button type="reset" className="layui-btn layui-btn-primary">重置</button>
