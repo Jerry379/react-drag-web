@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import 'antd/dist/antd.css';
 import { Layout, Menu, Icon } from 'antd';
-import Form from './components/Form'
+import Form from './pages/Form'
 
 const {Content, Sider } = Layout;
 // const { SubMenu } = Menu;
