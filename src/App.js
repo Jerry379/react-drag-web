@@ -3,6 +3,9 @@ import './App.css';
 import 'antd/dist/antd.css';
 import { Layout, Menu, Icon } from 'antd';
 import Form from './pages/Form'
+import EditPage from './pages/EditPage'
+import { DndProvider } from 'react-dnd'
+import HTML5Backend from 'react-dnd-html5-backend'
 
 const {Content, Sider } = Layout;
 // const { SubMenu } = Menu;
@@ -27,18 +30,20 @@ function App() {
             </Menu.Item>
           </Menu>
         </Sider>
-        <Layout style={{display:'flex',flexDirection:'row'}}>
-          <Layout style={{flex:1}}>
-            <Content style={{ margin: '10px 10px',background: '#fff', padding: 10 }}>
-              <Form/>
-            </Content>
+        <DndProvider backend={HTML5Backend}>
+          <Layout style={{display:'flex',flexDirection:'row'}}>
+            <Layout style={{flex:1}}>
+              <Content style={{ margin: '10px 10px',background: '#fff', padding: 10 }}>
+                <Form/>
+              </Content>
+            </Layout>
+            <Layout style={{flex:1}}>
+              <Content style={{ margin: '10px 10px',background: '#fff', padding: 10 }}>
+                <EditPage/>
+              </Content>
+            </Layout>
           </Layout>
-          <Layout style={{flex:1}}>
-            <Content style={{ margin: '10px 10px',background: '#fff', padding: 10 }}>
-              
-            </Content>
-          </Layout>
-        </Layout>
+        </DndProvider>
       </Layout>
   );
 }

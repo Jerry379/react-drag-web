@@ -1,8 +1,19 @@
 import React from 'react';
+import { useDrag } from 'react-dnd'
 
 export default function SelectGroupEle(){
+  const [{ isDragging }, drag] = useDrag({
+    item: {type:'form' },
+    collect: monitor => ({
+      isDragging: !!monitor.isDragging(),
+    }),
+  })
   return (
-    <div className="layui-form-item layui-form-text dragitem">
+    <div className="layui-form-item layui-form-text dragitem" ref={drag}
+    style={{
+      opacity: isDragging ? 0.5 : 1,
+    }}
+    >
           <label className="layui-form-label">下拉选择框</label>
           <div className="layui-input-block">
           <select name="quiz">
