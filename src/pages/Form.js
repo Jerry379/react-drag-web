@@ -2,7 +2,7 @@ import React,{useEffect} from 'react';
 import '../../node_modules/layui-src/dist/css/layui.css'
 import CheckBox1Ele from '../components/form/CheckBox1Ele'
 import CheckBoxEle from '../components/form/CheckBoxEle'
-// import FormEle from '../components/form/FormEle'
+import FormEle from '../components/form/FormEle'
 import InputEle from '../components/form/InputEle'
 import PassWordEle from '../components/form/PassWordEle'
 import RadioEle from '../components/form/RadioEle'
@@ -22,7 +22,7 @@ function Form(){
     });    
   })
   return (
-    <form className="layui-form" action="">
+    <FormEle>
       <CheckBox1Ele/>
       <CheckBoxEle/>
       <InputEle/>
@@ -39,7 +39,7 @@ function Form(){
           <button type="reset" className="layui-btn layui-btn-primary">重置</button>
           </div>
       </div>
-    </form>
+    </FormEle>
   )
 }
 export default Form;

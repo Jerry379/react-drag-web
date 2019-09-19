@@ -4,6 +4,10 @@ import { useDrag } from 'react-dnd'
 export default function CheckBox1Ele(){
   const [{ isDragging }, drag] = useDrag({
     item: {type:'form' },
+    begin:(monitor)=>{
+      console.log(monitor);
+      
+    },
     end: (item, monitor) => {
       const dropResult = monitor.getDropResult()
       if (item && dropResult) {
@@ -18,6 +22,7 @@ export default function CheckBox1Ele(){
     <div className="layui-form-item dragitem" ref={drag}
     style={{
       opacity: isDragging ? 0.5 : 1,
+      border: isDragging?'2px dashed #f00':'none'
     }}
     >
       <label className="layui-form-label">多选框</label>
