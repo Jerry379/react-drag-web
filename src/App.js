@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import 'antd/dist/antd.css';
-import { Layout, Menu, Icon } from 'antd';
+import { Layout, Menu, Icon,Button } from 'antd';
 import Form from './pages/Form'
 import EditPage from './pages/EditPage'
 import { DndProvider } from 'react-dnd'
@@ -39,6 +39,7 @@ function App() {
             </Layout>
             <Layout style={{flex:1}}>
               <Content style={{ margin: '10px 10px',background: '#fff', padding: 10 }}>
+                  <Button type="primary">复制代码</Button>
                 <EditPage/>
               </Content>
             </Layout>

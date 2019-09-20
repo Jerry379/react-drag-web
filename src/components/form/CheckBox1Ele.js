@@ -3,16 +3,9 @@ import { useDrag } from 'react-dnd'
 
 export default function CheckBox1Ele(){
   const [{ isDragging }, drag] = useDrag({
-    item: {type:'form' },
-    begin:(monitor)=>{
-      console.log(monitor);
-      
-    },
-    end: (item, monitor) => {
-      const dropResult = monitor.getDropResult()
-      if (item && dropResult) {
-        alert(`You dropped ${item.name} into ${dropResult.name}!`)
-      }
+    item: {
+      type:'form',
+      name:"CheckBox1Ele"
     },
     collect: monitor => ({
       isDragging: !!monitor.isDragging(),

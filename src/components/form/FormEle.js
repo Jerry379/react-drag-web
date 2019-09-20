@@ -4,7 +4,10 @@ import { useDrag } from 'react-dnd'
 
 export default function FormEle(props){
   const [{ isDragging }, drag] = useDrag({
-    item: {type:'FormEle' },
+    item: {
+      type:'FormEle',
+      name:"FormEle"
+    },
     collect: monitor => ({
       isDragging: !!monitor.isDragging(),
     }),
@@ -15,8 +18,10 @@ export default function FormEle(props){
       dir: 'http://39.104.117.71:8088/yzdj-admin-web/static/layui/'
     })
     layui.use('form', function(){
-      
-    });    
+      let form = layui.form;
+      form.render();
+    });
+    
   })
   return (
     <form

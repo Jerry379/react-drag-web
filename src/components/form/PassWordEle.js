@@ -3,7 +3,10 @@ import { useDrag } from 'react-dnd'
 
 export default function PassWordEle(){
   const [{ isDragging }, drag] = useDrag({
-    item: {type:'form' },
+    item: {
+      type:'form',
+      name:'PassWordEle'
+    },
     collect: monitor => ({
       isDragging: !!monitor.isDragging(),
     }),
@@ -12,6 +15,7 @@ export default function PassWordEle(){
     <div className="layui-form-item dragitem" ref={drag}
     style={{
       opacity: isDragging ? 0.5 : 1,
+      border: isDragging?'2px dashed #f00':'none'
     }}
     >
       <label className="layui-form-label">密码框</label>
