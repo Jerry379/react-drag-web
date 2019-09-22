@@ -1,7 +1,8 @@
-import React from 'react';
-import { useDrag } from 'react-dnd'
+import React,{useRef} from 'react';
+import { useDrag, useDrop } from 'react-dnd'
 
 export default function CheckBox1Ele(){
+  const ref = useRef(null)
   const [{ isDragging }, drag] = useDrag({
     item: {
       type:'form',
@@ -11,8 +12,20 @@ export default function CheckBox1Ele(){
       isDragging: !!monitor.isDragging(),
     }),
   })
+
+  const [,drop] = useDrop({
+    accept:'form',
+    hover(item,monitor){
+      if (!ref.current) {
+        return
+      }
+      console.log(item);
+      console.log(monitor);
+    }
+  })
+  drag(drop(ref))
   return (
-    <div className="layui-form-item dragitem" ref={drag}
+    <div className="layui-form-item dragitem" ref={ref}
     style={{
       opacity: isDragging ? 0.5 : 1,
       border: isDragging?'2px dashed #f00':'none'

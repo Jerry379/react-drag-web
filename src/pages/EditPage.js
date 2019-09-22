@@ -5,7 +5,7 @@ import LoadComponents from './LoadComponents'
 
 export default function EditPage(){
     const [componentArr,setComponentArr] = useState([]);
-    const [{getItem}, drop] = useDrop({
+    const [, drop] = useDrop({
         accept: 'form',
         drop:(item,monitor)=>{
             LoadComponents[item.name]().then((ele)=>{

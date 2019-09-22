@@ -1,5 +1,4 @@
 import React,{useEffect} from 'react';
-import '../../../node_modules/layui-src/dist/css/layui.css'
 import { useDrag } from 'react-dnd'
 
 export default function FormEle(props){
