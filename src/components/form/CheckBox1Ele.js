@@ -19,8 +19,6 @@ export default function CheckBox1Ele(){
       if (!ref.current) {
         return
       }
-      console.log(item);
-      console.log(monitor);
     }
   })
   drag(drop(ref))

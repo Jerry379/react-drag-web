@@ -9,5 +9,6 @@ export default{
   'SelectGroupEle' : () => {return import('../components/form/SelectGroupEle')},
   'SelectSearchEle' : () => {return import('../components/form/SelectSearchEle')},
   'SwitchEle' : () => {return import('../components/form/SwitchEle')},
-  'TextareaEle' : () => {return import('../components/form/TextareaEle')}
+  'TextareaEle' : () => {return import('../components/form/TextareaEle')},
+  'DefaultBtn': () => {return import('../components/buttons/DefaultBtn')},
 }

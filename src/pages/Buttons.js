@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { Collapse,Radio,Checkbox} from 'antd';
+import { Collapse,Radio,Checkbox,Input } from 'antd';
 import DefaultBtn from '../components/buttons/DefaultBtn'
 
 const { Panel } = Collapse;
 export default function Buttons(){
     const [theme,setTheme] = useState('')
     const [size,setSize] = useState('')
-    const [radius,setRadius] = useState([])
+    const [radius,setRadius] = useState('')
     const [icon,setIcon] = useState('')
     const [group,setGroup] = useState(false)
     const [content,setContent] = useState(false)
+    const [text,setText] = useState('默认按钮')
     useEffect(()=>{
         /* global layui */
         layui.config({
@@ -27,18 +28,23 @@ export default function Buttons(){
         }else if(type === 'size'){
             setSize(e.target.value)
         }else if(type === 'radius'){
-            setRadius(e)
+            setRadius(e[0]||'')
         }else if(type === 'icon'){
             // setTheme(e.target.value)
         }else if(type === 'group'){
             setGroup(e.length>0?true:false)
         }else if(type === 'content'){
             setContent(e.length>0?true:false)
+        }else if(type === 'text'){
+            setText(e.target.value)
         }
     }
     return (
         <div>
-            <DefaultBtn/>
+            <div style={{minHeight:'60px'}}>
+                <DefaultBtn theme={theme} size={size} radius={radius} icon={icon} group={group} content={content} text={text}/>
+                <Input style={{float:"right",width:'200px'}} placeholder="请输入按钮文字" value={text} onChange={(e)=>{changeState(e,'text')}}/>
+            </div>
             <Collapse defaultActiveKey={[1,2,3,4,5,6]}>
                 <Panel header="主题" key="1">
                     <Radio.Group value={theme} onChange={(e)=>{changeState(e,'theme')}}>
@@ -59,7 +65,7 @@ export default function Buttons(){
                     </Radio.Group>
                 </Panel>
                 <Panel header="圆角" key="3">
-                    <Checkbox.Group value={radius} onChange={(e)=>{changeState(e,'radius')}}>
+                    <Checkbox.Group value={[radius]} onChange={(e)=>{changeState(e,'radius')}}>
                         <Checkbox value="layui-btn-radius">layui-btn-radius</Checkbox>
                     </Checkbox.Group>
                 </Panel>

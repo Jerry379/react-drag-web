@@ -10,29 +10,31 @@ import EditPage from './pages/EditPage'
 import { DndProvider } from 'react-dnd'
 import HTML5Backend from 'react-dnd-html5-backend'
 import '../node_modules/layui-src/dist/css/layui.css'
+import { createBrowserHistory } from "history";
 const {Content, Sider } = Layout;
 // const { SubMenu } = Menu;
 
 function App() {
+  const history = createBrowserHistory()
   return (
-    <Router>
+    <Router history={history}>
       <Layout style={{ minHeight: '100vh' }}>
         <Sider collapsible>
           <div className="logo" />
-          <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-            <Menu.Item key="1">
+          <Menu theme="dark" defaultSelectedKeys={[history.location.pathname]} mode="inline">
+            <Menu.Item key="/form/">
               <Link to="/form/">
                 <Icon type="pie-chart" />
                 <span>表单</span>
               </Link>
             </Menu.Item>        
-            <Menu.Item key="2">
+            <Menu.Item key="/button/">
               <Link to="/button/">
                 <Icon type="desktop" />
                 <span>按钮</span>
               </Link>
             </Menu.Item>
-            <Menu.Item key="9">
+            <Menu.Item key="/file/">
               <Link to="/file/">
                 <Icon type="file" />
                 <span>文件上传</span>
@@ -44,7 +46,8 @@ function App() {
           <Layout style={{display:'flex',flexDirection:'row'}}>
             <Layout style={{flex:1}}>
               <Content style={{ margin: '10px 10px',background: '#fff', padding: 10 }}>
-                <Route path='/form/' exact component={Form}/>
+                <Route path='/' exact component={Form}/>
+                <Route path='/form/' component={Form}/>
                 <Route path='/button/' component={Buttons}/>
                 <Route path='/file/' component={Files}/>
               </Content>
